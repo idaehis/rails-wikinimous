@@ -1,0 +1,7 @@
+<h1>Articles#index</h1>
+<ul>
+  <% @articles.each do |article| %>
+  <li><em><%= link_to article.title, article_path(article) %>: </em><%= article.content %> | <%= link_to "Delete this article", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+<%= link_to "Create a new article",  new_article_path%>
